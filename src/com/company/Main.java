@@ -20,17 +20,41 @@ public class Main {
 
         Arrays.sort(breed);
 
+        int BorkNumber = 1 +  (int)(Math.random()*(50));
+        System.out.println("BorkNumber: " + BorkNumber + ", " + (breed[BorkNumber]));
+
         System.out.println("Welcome to Guess the Bork! Here is the list of good boiz we could be thinking of:");
         System.out.println("");
 
         for (int i = 0; i < breed.length; i++){
-            System.out.println(breed[i]);
+            System.out.println((i+1) + ". " + breed[i]);
         }
 
         System.out.println("");
-        System.out.println("Take a guess which good bork it is!");
+        System.out.println("Take a guess which good bork it is! Please input the number of the breed.");
         Scanner borkInput1 = new Scanner(System.in);
-        String bork1 = borkInput1.nextLine();
+        int bork1 = borkInput1.nextInt();
 
+
+        int boof;
+
+        if(bork1==BorkNumber){
+            System.out.println("WOWZA! You did it! The best doge was: " + BorkNumber + ". " + (breed[BorkNumber]));
+        } else {
+            while(bork1!=BorkNumber){
+                if(bork1<BorkNumber){
+                    System.out.println("That's too low! Try again!");
+                    Scanner bork2 = new Scanner(System.in);
+                    boof = bork2.nextInt();
+                    bork1 = boof;
+                } else if(bork1>BorkNumber){
+                    System.out.println("That's too high! Try again!");
+                    Scanner bork2 = new Scanner(System.in);
+                    boof = bork2.nextInt();
+                    bork1 = boof;
+                }
+            }
+            System.out.println("WOWZA! You did it! The best doge was: " + BorkNumber + ". " + (breed[BorkNumber]));
+        }
     }
 }
