@@ -17,14 +17,20 @@ public class Main {
                 "Vizsla", "Treeing Walker Coonhound", "Toy Fox Terrier", "Tibetan Mastiff",
                 "Swedish Vallhund", "Soft-coated Wheaten Terrier", "Shih Tzu",
                 "Clifford the Big Red Dog"};
-        int lngth = breed.length;
-        System.out.println(lngth);
 
         Arrays.sort(breed);
+
+        System.out.println("Welcome to Guess the Bork! Here is the list of good boiz we could be thinking of:");
+        System.out.println("");
 
         for (int i = 0; i < breed.length; i++){
             System.out.println(breed[i]);
         }
+
+        System.out.println("");
+        System.out.println("Take a guess which good bork it is!");
+        Scanner borkInput1 = new Scanner(System.in);
+        String bork1 = borkInput1.nextLine();
 
     }
 }
