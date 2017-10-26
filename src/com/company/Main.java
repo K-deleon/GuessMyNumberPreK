@@ -21,8 +21,7 @@ public class Main {
         Arrays.sort(breed);
 
         int arrayNum = 1 +  (int)(Math.random()*(50));
-        int real = arrayNum + 1;
-        System.out.println("BorkNumber: " + (real + 1)+ ", " + (breed[real]));
+        //System.out.println("BorkNumber: " + (arrayNum + 1)+ ", " + (breed[arrayNum]));
 
         System.out.println("Welcome to Guess the Bork! Here is the list of good boiz we could be thinking of:");
         System.out.println("");
@@ -40,23 +39,23 @@ public class Main {
 
         String dogName;
 
-        if(guessNum==real){
-            System.out.println("WOWZA! You did it! The best doge was: " + real + ". " + (breed[real]));
+        if(guessNum==arrayNum){
+            System.out.println("WOWZA! You did it! The best doge was: " + (breed[arrayNum]));
         } else {
-            while(guessNum!=real){
-                if(guessNum<real){
+            while(guessNum!=arrayNum){
+                if(guessNum<arrayNum){
                     System.out.println("That's too low! Try again!");
                     Scanner bork2 = new Scanner(System.in);
                     dogName = bork2.nextLine();
                     guessNum = (Arrays.binarySearch(breed, dogName));
-                } else if(guessNum>real){
+                } else if(guessNum>arrayNum){
                     System.out.println("That's too high! Try again!");
                     Scanner bork2 = new Scanner(System.in);
                     dogName = bork2.nextLine();
                     guessNum = (Arrays.binarySearch(breed, dogName));
                 }
             }
-            System.out.println("WOWZA! You did it! The best doge was: " + (breed[real]));
+            System.out.println("WOWZA! You did it! The best doge was: " + (breed[arrayNum]));
         }
     }
 }
